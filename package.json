@@ -1,0 +1,127 @@
+{
+  "name": "copy-lines-for-ai",
+  "displayName": "Copy Lines for AI",
+  "description": "Copy selected lines with file path and line range. Perfect for pasting into AI context windows",
+  "version": "1.0.0",
+  "publisher": "obydul",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdobydullah/copy-lines-for-ai"
+  },
+  "keywords": [
+    "copy",
+    "ai",
+    "context",
+    "lines",
+    "terminal",
+    "path"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyLinesForAI.copyWithPath",
+        "title": "Copy Lines for AI (path:lines)"
+      },
+      {
+        "command": "copyLinesForAI.copyWithPathAndContent",
+        "title": "Copy Lines for AI (path:lines + content)"
+      },
+      {
+        "command": "copyLinesForAI.copyWithFullPath",
+        "title": "Copy Lines for AI (full path:lines)"
+      },
+      {
+        "command": "copyLinesForAI.copyWithFullPathAndContent",
+        "title": "Copy Lines for AI (full path:lines + content)"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "copyLinesForAI.submenu",
+        "label": "Copy Lines for AI"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorHasSelection",
+          "command": "copyLinesForAI.copyWithPath",
+          "group": "1_copy_lines@1"
+        },
+        {
+          "when": "editorHasSelection",
+          "submenu": "copyLinesForAI.submenu",
+          "group": "1_copy_lines@2"
+        }
+      ],
+      "copyLinesForAI.submenu": [
+        {
+          "command": "copyLinesForAI.copyWithPath",
+          "group": "1_relative@1"
+        },
+        {
+          "command": "copyLinesForAI.copyWithPathAndContent",
+          "group": "1_relative@2"
+        },
+        {
+          "command": "copyLinesForAI.copyWithFullPath",
+          "group": "2_absolute@1"
+        },
+        {
+          "command": "copyLinesForAI.copyWithFullPathAndContent",
+          "group": "2_absolute@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "copyLinesForAI.copyWithPath",
+        "key": "ctrl+alt+c",
+        "mac": "cmd+alt+c",
+        "when": "editorTextFocus && editorHasSelection"
+      },
+      {
+        "command": "copyLinesForAI.copyWithPathAndContent",
+        "key": "ctrl+alt+x",
+        "mac": "cmd+alt+x",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ],
+    "configuration": {
+      "title": "Copy Lines for AI",
+      "properties": {
+        "copyLinesForAI.useRelativePath": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use relative path (from workspace root) instead of absolute path"
+        },
+        "copyLinesForAI.includeLanguageHint": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include language hint in content copy (e.g. ```yaml)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "npx @vscode/vsce package"
+  },
+  "files": [
+    "extension.js",
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "media"
+  ],
+  "devDependencies": {
+    "@vscode/vsce": "^3.7.1"
+  }
+}
