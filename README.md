@@ -2,7 +2,7 @@
 
 Quickly copy selected code with its **file path + line range**. Perfect for pasting into AI chat windows (Claude, ChatGPT, Antigravity, Cursor, etc).
 
-![Preview](media/copy-lines-for-ai.png)
+![Preview](media/thumbnail-121.png)
 
 ## Features
 
@@ -28,28 +28,28 @@ If you've downloaded the `.vsix` file from the [GitHub Releases](https://github.
 
 1. **Select** lines in the editor.
 2. **Right-click** to access the context menu:
-   - **Copy Lines for AI (path:lines)**: Quick root-level access to copy relative path reference.
-   - **Copy Lines for AI >** (Submenu):
-     - `Copy Lines for AI (path:lines)`
-     - `Copy Lines for AI (path:lines + content)`
-     - `Copy Lines for AI (full path:lines)`
-     - `Copy Lines for AI (full path:lines + content)`
+   - **Copy Relative Path with Line**: Quick root-level access to copy relative path reference.
+   - **Copy Lines for AI** (Submenu):
+     - `Copy Relative Path with Line`
+     - `Copy Relative Path with Line & Content`
+     - `Copy Path with Line`
+     - `Copy Path with Line & Content`
 
 ## Output Examples
 
-**Copy Lines for AI (path:lines):**
+**Copy Relative Path with Line:**
 
 ```text
 src/utils/logger.js:line12-15
 ```
 
-**Copy Lines for AI (full path:lines):**
+**Copy Path with Line:**
 
 ```text
 /Users/obydul/Project/src/utils/logger.js:line12-15
 ```
 
-**Copy Lines for AI (path:lines + content):**
+**Copy Relative Path with Line & Content:**
 
 ```text
 src/utils/logger.js:line12-15
@@ -60,7 +60,7 @@ function log(msg) {
 ``
 ```
 
-**Copy Lines for AI (full path:lines + content):**
+**Copy Path with Line & Content:**
 
 ```text
 /Users/obydul/Project/src/utils/logger.js:line12-15

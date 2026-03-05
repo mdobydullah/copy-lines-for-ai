@@ -2,7 +2,7 @@
   "name": "copy-lines-for-ai",
   "displayName": "Copy Lines for AI",
   "description": "Copy selected lines with file path and line range. Perfect for pasting into AI context windows",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "obydul",
   "icon": "media/icon.png",
   "engines": {
@@ -28,20 +28,20 @@
   "contributes": {
     "commands": [
       {
-        "command": "copyLinesForAI.copyWithPath",
-        "title": "Copy Lines for AI (path:lines)"
+        "command": "copyLinesForAI.copyRelativeWithLine",
+        "title": "Copy Relative Path with Line"
       },
       {
-        "command": "copyLinesForAI.copyWithPathAndContent",
-        "title": "Copy Lines for AI (path:lines + content)"
+        "command": "copyLinesForAI.copyRelativeWithLineContent",
+        "title": "Copy Relative Path with Line & Content"
       },
       {
-        "command": "copyLinesForAI.copyWithFullPath",
-        "title": "Copy Lines for AI (full path:lines)"
+        "command": "copyLinesForAI.copyFullPathWithLine",
+        "title": "Copy Path with Line"
       },
       {
-        "command": "copyLinesForAI.copyWithFullPathAndContent",
-        "title": "Copy Lines for AI (full path:lines + content)"
+        "command": "copyLinesForAI.copyFullPathWithLineContent",
+        "title": "Copy Path with Line & Content"
       }
     ],
     "submenus": [
@@ -54,43 +54,48 @@
       "editor/context": [
         {
           "when": "editorHasSelection",
-          "command": "copyLinesForAI.copyWithPath",
+          "command": "copyLinesForAI.copyRelativeWithLine",
           "group": "1_copy_lines@1"
         },
         {
           "when": "editorHasSelection",
-          "submenu": "copyLinesForAI.submenu",
+          "command": "copyLinesForAI.copyRelativeWithLineContent",
           "group": "1_copy_lines@2"
+        },
+        {
+          "when": "editorHasSelection",
+          "submenu": "copyLinesForAI.submenu",
+          "group": "1_copy_lines@3"
         }
       ],
       "copyLinesForAI.submenu": [
         {
-          "command": "copyLinesForAI.copyWithPath",
+          "command": "copyLinesForAI.copyRelativeWithLine",
           "group": "1_relative@1"
         },
         {
-          "command": "copyLinesForAI.copyWithPathAndContent",
+          "command": "copyLinesForAI.copyRelativeWithLineContent",
           "group": "1_relative@2"
         },
         {
-          "command": "copyLinesForAI.copyWithFullPath",
+          "command": "copyLinesForAI.copyFullPathWithLine",
           "group": "2_absolute@1"
         },
         {
-          "command": "copyLinesForAI.copyWithFullPathAndContent",
+          "command": "copyLinesForAI.copyFullPathWithLineContent",
           "group": "2_absolute@2"
         }
       ]
     },
     "keybindings": [
       {
-        "command": "copyLinesForAI.copyWithPath",
+        "command": "copyLinesForAI.copyRelativeWithLine",
         "key": "ctrl+alt+c",
         "mac": "cmd+alt+c",
         "when": "editorTextFocus && editorHasSelection"
       },
       {
-        "command": "copyLinesForAI.copyWithPathAndContent",
+        "command": "copyLinesForAI.copyRelativeWithLineContent",
         "key": "ctrl+alt+x",
         "mac": "cmd+alt+x",
         "when": "editorTextFocus && editorHasSelection"

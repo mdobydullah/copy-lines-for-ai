@@ -34,7 +34,7 @@ function getLineRange(selection) {
  * Command 1: Copy just the path + line range
  * Output: k8s/templates/clickhouse.yaml:line36-39
  */
-async function copyWithPath() {
+async function copyRelativeWithLine() {
   const editor = vscode.window.activeTextEditor;
   if (!editor) return;
 
@@ -58,7 +58,7 @@ async function copyWithPath() {
  * ... selected code ...
  * ```
  */
-async function copyWithPathAndContent() {
+async function copyRelativeWithLineContent() {
   const editor = vscode.window.activeTextEditor;
   if (!editor) return;
 
@@ -84,7 +84,7 @@ async function copyWithPathAndContent() {
   vscode.window.setStatusBarMessage(`✅ Copied with content: ${filePath}:${lineRange}`, 3000);
 }
 
-async function copyWithFullPath() {
+async function copyFullPathWithLine() {
   const editor = vscode.window.activeTextEditor;
   if (!editor) return;
 
@@ -97,7 +97,7 @@ async function copyWithFullPath() {
   vscode.window.setStatusBarMessage(`✅ Copied: ${result}`, 3000);
 }
 
-async function copyWithFullPathAndContent() {
+async function copyFullPathWithLineContent() {
   const editor = vscode.window.activeTextEditor;
   if (!editor) return;
 
@@ -123,10 +123,10 @@ async function copyWithFullPathAndContent() {
 
 function activate(context) {
   context.subscriptions.push(
-    vscode.commands.registerCommand('copyLinesForAI.copyWithPath', copyWithPath),
-    vscode.commands.registerCommand('copyLinesForAI.copyWithPathAndContent', copyWithPathAndContent),
-    vscode.commands.registerCommand('copyLinesForAI.copyWithFullPath', copyWithFullPath),
-    vscode.commands.registerCommand('copyLinesForAI.copyWithFullPathAndContent', copyWithFullPathAndContent)
+    vscode.commands.registerCommand('copyLinesForAI.copyRelativeWithLine', copyRelativeWithLine),
+    vscode.commands.registerCommand('copyLinesForAI.copyRelativeWithLineContent', copyRelativeWithLineContent),
+    vscode.commands.registerCommand('copyLinesForAI.copyFullPathWithLine', copyFullPathWithLine),
+    vscode.commands.registerCommand('copyLinesForAI.copyFullPathWithLineContent', copyFullPathWithLineContent)
   );
 }
 
