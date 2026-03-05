@@ -14,8 +14,8 @@ Quickly copy selected code with its **file path + line range**. Perfect for past
 
 ## Installation
 
-### VS Code Marketplace (Coming Soon!)
-Search for "Copy Lines for AI" in the VS Code Extensions view.
+### VS Code Marketplace
+Install directly from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=obydul.copy-lines-for-ai) or search for **"Copy Lines for AI"** in the VS Code Extensions view.
 
 ### Manual Installation (.vsix)
 If you've downloaded the `.vsix` file from the [GitHub Releases](https://github.com/mdobydullah/copy-lines-for-ai/releases) page:

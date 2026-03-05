@@ -2,8 +2,9 @@
   "name": "copy-lines-for-ai",
   "displayName": "Copy Lines for AI",
   "description": "Copy selected lines with file path and line range. Perfect for pasting into AI context windows",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "obydul",
+  "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.75.0"
   },

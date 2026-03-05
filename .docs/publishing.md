@@ -38,13 +38,13 @@ If you haven't already, create a publisher on the [Visual Studio Marketplace Man
 ### B. Login via Terminal
 You'll need a Personal Access Token (PAT) from Azure DevOps.
 ```bash
-vsce login <publisher-name>
+npx @vscode/vsce login <publisher-name>
 ```
 
 ### C. Publish to Marketplace
 To push the extension live to the marketplace:
 ```bash
-vsce publish
+npx @vscode/vsce publish
 ```
 *Note: This will automatically increment the version unless specified otherwise.*
 
