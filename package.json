@@ -2,7 +2,7 @@
   "name": "copy-lines-for-ai",
   "displayName": "Copy Lines for AI",
   "description": "Copy selected lines with file path and line range. Perfect for pasting into AI context windows",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "obydul",
   "icon": "media/icon.png",
   "engines": {
